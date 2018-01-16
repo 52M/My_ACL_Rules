@@ -8,18 +8,21 @@
 # 参照lhie1的surge规则改编，致谢!! https://github.com/lhie1/Surge
 # 参照scomper的surge规则改编，致谢!! https://gist.github.com/scomper/915b04a974f9e11952babfd0bbb241a8/revisions
 #
+# 更新记录 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/more/New.md
+# 下载地址 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/banAD.acl
+#
 # 参数解释：
 # [proxy_all] 默认代理-本规则使用
 # [bypass_all] 默认直连
 # [outbound_block_list] 禁止访问列表 在26行
-# [bypass_list] 直连列表 在723多行
-# [proxy_list] 代理列表 在3371多行
+# [bypass_list] 直连列表 在6471多行
+# [proxy_list] 代理列表 在998多行
 # [remote_dns] 远程 DNS 解析 -不加使用本地 DNS
 #
 #**********************************************************************
 
-[proxy_all]
-# 默认代理
+[bypass_all]
+# 默认直连
 
 #**********************************************************************
 [outbound_block_list]
@@ -1205,8 +1208,8 @@
 221.228.214.101/32
 
 #**********************************************************************
-[bypass_list]
-# 直连列表
+[proxy_list]
+# 代理列表
 
 # CN域名直连
 ^.*\.cn$
@@ -1247,46 +1250,10 @@
 (^|\.)tbcdn\.com$
 (^|\.)tmall\.com$
 
-# GFWList Whitelist
-(^|\.)connectivitycheck\.gstatic\.com$
-(^|\.)cwb\.gov\.tw$
-(^|\.)dbnsa\.gov\.tw$
-(^|\.)eastcoast-nsa\.gov\.tw$
-(^|\.)erv-nsa\.gov\.tw$
-(^|\.)khm\.google\.com$
-(^|\.)khm\.googleapis\.com$
-(^|\.)khm0\.google\.com$
-(^|\.)khm0\.googleapis\.com$
-(^|\.)khm1\.google\.com$
-(^|\.)khm1\.googleapis\.com$
-(^|\.)khm2\.google\.com$
-(^|\.)khm2\.googleapis\.com$
-(^|\.)khm3\.google\.com$
-(^|\.)khm3\.googleapis\.com$
-(^|\.)khmdb\.google\.com$
-(^|\.)khmdb\.googleapis\.com$
-(^|\.)maolin-nsa\.gov\.tw$
-(^|\.)matsu-nsa\.gov\.tw$
-(^|\.)matsucc\.gov\.tw$
-(^|\.)nankan\.gov\.tw$
-(^|\.)necoast-nsa\.gov\.tw$
-(^|\.)northguan-nsa\.gov\.tw$
-(^|\.)penghu-nsa\.gov\.tw$
-(^|\.)post\.gov\.tw$
-(^|\.)redirector\.gvt1\.com$
-(^|\.)share\.dmhy\.org$
-(^|\.)siraya-nsa\.gov\.tw$
-(^|\.)sunmoonlake\.gov\.tw$
-(^|\.)tools\.google\.com$
-(^|\.)trimt-nsa\.gov\.tw$
-(^|\.)uluai\.com\.cn$
-(^|\.)yda\.gov\.tw$
-
 # Accelerate direct sites
 (^|\.)12306\.com$
 (^|\.)126\.net$
 (^|\.)163\.com$
-(^|\.)1688\.com$
 (^|\.)17k\.com$
 (^|\.)360\.com$
 (^|\.)360buy\.com$
@@ -1488,30 +1455,6 @@
 (^|\.)zhihu\.com$
 (^|\.)zhimg\.com$
 (^|\.)zimuzu\.tv$
-
-#**********************************************************************
-# 本地/局域网地址
-^(.*\.)?local$
-^(.*\.)?localhost$
-^(.*\.)?ip6-localhost$
-^(.*\.)?ip6-loopback$
-
-::ffff:0:0:0:0/1
-::ffff:128:0:0:0/1
-0.0.0.0/8
-10.0.0.0/8
-100.64.0.0/10
-127.0.0.0/8
-169.254.0.0/16
-172.16.0.0/12
-192.0.0.0/29
-192.0.2.0/24
-192.88.99.0/24
-192.168.0.0/16
-198.18.0.0/15
-198.51.100.0/24
-203.0.113.0/24
-224.0.0.0/3
 
 # 国内ip地址
 1.0.1.0/24
@@ -6871,292 +6814,28 @@
 223.255.252.0/23
 
 #**********************************************************************
-[proxy_list]
-# 代理列表
+[bypass_list]
+# 直连列表
 
-# 国外域名
-^.*\.hk$
-^.*\.tw$
-^.*\.sg$
-^.*\.jp$
-^.*\.kr$
-^.*\.uk$
-^.*\.us$
-^.*\.tw$
+# 本地/局域网地址
+^(.*\.)?local$
+^(.*\.)?localhost$
+^(.*\.)?ip6-localhost$
+^(.*\.)?ip6-loopback$
 
-# MyList
-(^|\.)bit\.no\.com$
-(^|\.)btlibrary\.me$
-(^|\.)cccat\.cc$
-(^|\.)gvt\w\.com$
-(^|\.)ip138\.com$
-(^|\.)microsoft\.com$
-(^|\.)cloudfront\.net$
-(^|\.)s3\.amazonaws\.com$
-(^|\.)tumbex\.com$
-(^|\.)twdvd\.com$
-(^|\.)xn--i2ru8q2qg\.com$
-(^|\.)twimg\.org$
-(^|\.)ping\.pe$
-(^|\.)tvb\.com$
-(^|\.)mytvsuper\.com$
-(^|\.)dmm\.co\.jp$
-
-# 国外域名关键字
-(^|\.)\w*1e100\w*\.\w*$
-(^|\.)\w*appledaily\w*\.\w*$
-(^|\.)\w*blogspot\w*\.\w*$
-(^|\.)\w*dropbox\w*\.\w*$
-(^|\.)\w*facebook\w*\.\w*$
-(^|\.)\w*fbcdn\w*\.\w*$
-(^|\.)\w*gmail\w*\.\w*$
-(^|\.)\w*google\w*\.\w*$
-(^|\.)\w*instagram\w*\.\w*$
-(^|\.)\w*spotify\w*\.\w*$
-(^|\.)\w*telegram\w*\.\w*$
-(^|\.)\w*twitter\w*\.\w*$
-(^|\.)\w*whatsapp\w*\.\w*$
-(^|\.)\w*sci-hub\w*\.\w*$
-(^|\.)\w*avtb\w*\.\w*$
-(^|\.)\w*abema\w*\.\w*$
-
-# Top blocked sites
-(^|\.)4sqi\.net$
-(^|\.)a248\.e\.akamai\.net$
-(^|\.)adobedtm\.com$
-(^|\.)aolcdn\.com$
-(^|\.)apkpure\.com$
-(^|\.)appspot\.com$
-(^|\.)archive\.org$
-(^|\.)armorgames\.com$
-(^|\.)aspnetcdn\.com$
-(^|\.)awsstatic\.com$
-(^|\.)azureedge\.net$
-(^|\.)azurewebsites\.net$
-(^|\.)bandwagonhost\.com$
-(^|\.)bkrtx\.com$
-(^|\.)blogcdn\.com$
-(^|\.)blogger\.com$
-(^|\.)blogsmithmedia\.com$
-(^|\.)blogspot\.com$
-(^|\.)blogspot\.hk$
-(^|\.)blogspot\.jp$
-(^|\.)box\.com$
-(^|\.)cachefly\.net$
-(^|\.)cdninstagram\.com$
-(^|\.)cdnst\.net$
-(^|\.)comodoca\.com$
-(^|\.)content\.office\.net$
-(^|\.)d3c33hcgiwev3\.cloudfront\.net$
-(^|\.)demdex\.net$
-(^|\.)deskconnect\.com$
-(^|\.)disqus\.com$
-(^|\.)disquscdn\.com$
-(^|\.)dropbox\.com$
-(^|\.)dropboxapi\.com$
-(^|\.)dropboxstatic\.com$
-(^|\.)dropboxusercontent\.com$
-(^|\.)duckduckgo\.com$
-(^|\.)edgecastcdn\.net$
-(^|\.)edgekey\.net$
-(^|\.)edgesuite\.net$
-(^|\.)eu-west-1\.console\.aws\.amazon\.com$
-(^|\.)eurekavpt\.com$
-(^|\.)facebook\.com$
-(^|\.)fb\.com$
-(^|\.)fb\.me$
-(^|\.)fbcdn\.net$
-(^|\.)firebaseio\.com$
-(^|\.)flickr\.com$
-(^|\.)flipboard\.com$
-(^|\.)gfx\.ms$
-(^|\.)gist\.github\.com$
-(^|\.)gongm\.in$
-(^|\.)id\.heroku\.com$
-(^|\.)instagram\.com$
-(^|\.)io\.io$
-(^|\.)issuu\.com$
-(^|\.)ixquick\.com$
-(^|\.)jtvnw\.net$
-(^|\.)kat\.cr$
-(^|\.)kobo\.com$
-(^|\.)kobobooks\.com$
-(^|\.)licdn\.com$
-(^|\.)live\.net$
-(^|\.)livefilestore\.com$
-(^|\.)llnwd\.net$
-(^|\.)macrumors\.com$
-(^|\.)medium\.com$
-(^|\.)mega\.nz$
-(^|\.)megaupload\.com$
-(^|\.)messenger\.com$
-(^|\.)netdna-cdn\.com$
-(^|\.)nintendo\.net$
-(^|\.)nsstatic\.net$
-(^|\.)nytstyle\.com$
-(^|\.)onedrive\.live\.com$
-(^|\.)openvpn\.net$
-(^|\.)periscope\.tv$
-(^|\.)pinimg\.com$
-(^|\.)pinterest\.com$
-(^|\.)pixiv\.net$
-(^|\.)prfct\.co$
-(^|\.)resilio\.com$
-(^|\.)s3-ap-northeast-1\.amazonaws\.com$
-(^|\.)s3-ap-southeast-2\.amazonaws\.com$
-(^|\.)sfx\.ms$
-(^|\.)shadowsocks\.org$
-(^|\.)slack-edge\.com$
-(^|\.)smartdnsproxy\.com$
-(^|\.)smartmailcloud\.com$
-(^|\.)sndcdn\.com$
-(^|\.)soundcloud\.com$
-(^|\.)startpage\.com$
-(^|\.)staticflickr\.com$
-(^|\.)symauth\.com$
-(^|\.)symcb\.com$
-(^|\.)symcd\.com$
-(^|\.)t\.me$
-(^|\.)telegram\.me$
-(^|\.)telegram\.org$
-(^|\.)thefacebook\.com$
-(^|\.)thepiratebay\.org$
-(^|\.)torproject\.org$
-(^|\.)trustasiassl\.com$
-(^|\.)tumblr\.co$
-(^|\.)tumblr\.com$
-(^|\.)txmblr\.com$
-(^|\.)vimeo\.com$
-(^|\.)vine\.co$
-(^|\.)vox-cdn\.com$
-(^|\.)wikileaks\.org$
-(^|\.)wuu\.wikipedia\.org$
-(^|\.)www\.youtube-nocookie\.com$
-(^|\.)youtu\.be$
-(^|\.)youtube\.com$
-(^|\.)ytimg\.com$
-(^|\.)zh-yue\.wikipedia\.org$
-(^|\.)zh\.m\.wikipedia\.org$
-(^|\.)zh\.wikipedia\.org$
-
-# Kakao Talk
-(^|\.)kakao\.com$
-(^|\.)kakao\.co\.kr$
-(^|\.)kakaocdn\.net$
-
-# Line
-(^|\.)lin\.ee$
-(^|\.)line-apps\.com$
-(^|\.)line-cdn\.net$
-(^|\.)line-scdn\.net$
-(^|\.)line\.me$
-(^|\.)line\.naver\.jp$
-(^|\.)nhncorp\.jp$
-125.209.208.0/20
-125.209.220.0/22
-125.209.222.202/32
-
-# MytvSUPER & Netflix
-(^|\.)\w*nowtv100\w*\.\w*$
-(^|\.)\w*rthklive\w*\.\w*$
-(^|\.)mytvsuper\.com$
-(^|\.)netflix\.com$
-(^|\.)netflix\.net$
-(^|\.)nflxext\.com$
-(^|\.)nflximg\.com$
-(^|\.)nflximg\.net$
-(^|\.)nflxvideo\.net$
-(^|\.)tvb\.com$
-45.43.9.10/24
-66.197.128.0/17
-64.120.128.0/17
-45.57.0.0/16
-37.77.0.0/16
-23.246.0.0/16
-198.45.0.0/16
-198.38.0.0/16
-192.173.0.0/16
-185.9.0.0/16
-185.2.0.0/16
-108.175.0.0/16
-54.175.0.0/16
-54.85.0.0/16
-23.78.0.0/16
-34.192.0.0/16
-54.86.0.0/16
-52.0.0.0/8
-54.0.0.0/16
-
-# Onenote
-(^|\.)live\.net$
-(^|\.)live\.com$
-(^|\.)onenote\.com$
-
-# Whatsapp
-(^|\.)whatsapp\.com$
-(^|\.)whatsapp\.net$
-18.194.0.0/15
-34.224.0.0/12
-54.242.0.0/15
-50.22.198.204/30
-208.43.122.128/27
-108.168.174.0/16
-173.192.231.32/27
-158.85.5.192/27
-174.37.243.0/16
-158.85.46.128/27
-173.192.222.160/27
-184.173.128.0/17
-158.85.224.160/27
-75.126.150.0/16
-69.171.235.0/16
-
-# Twitch
-(^|\.)twitch\.tv$
-(^|\.)ttvnw\.net$
-(^|\.)jtvnw\.net$
-(^|\.)akamaized\.net$
-
-#飞流直播
-(^|\.)neulion\.com$
-(^|\.)icntv\.xyz$
-(^|\.)flzbcdn\.xyz$
-
-# kakao Talk
-1.201.0.0/24
-103.246.56.0/22
-103.27.148.0/22
-110.76.140.0/22
-113.61.104.0/22
-27.0.236.0/22
-
-# LINE
-103.2.28.0/22
-119.235.224.0/21
-119.235.232.0/23
-119.235.235.0/24
-119.235.236.0/23
-125.6.146.0/24
-125.6.149.0/24
-125.6.190.0/24
-203.104.103.0/24
-203.104.128.0/20
-203.174.66.64/26
-203.174.77.0/24
-
-# Telegram
-109.239.140.0/24
-149.154.160.0/22
-149.154.164.0/22
-149.154.168.0/22
-149.154.172.0/22
-91.108.0.0/16
-
-#ResiloSync
-173.244.217.42/32
-209.95.56.60/32
-107.182.230.198/32
-173.244.209.150/32
-54.235.182.157/32
-(^|\.)config\.getsync\.com$
-(^|\.)config\.resilio\.com$
+::ffff:0:0:0:0/1
+::ffff:128:0:0:0/1
+0.0.0.0/8
+10.0.0.0/8
+100.64.0.0/10
+127.0.0.0/8
+169.254.0.0/16
+172.16.0.0/12
+192.0.0.0/29
+192.0.2.0/24
+192.88.99.0/24
+192.168.0.0/16
+198.18.0.0/15
+198.51.100.0/24
+203.0.113.0/24
+224.0.0.0/3
